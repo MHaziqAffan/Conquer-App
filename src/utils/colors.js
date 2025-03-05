@@ -1,0 +1,26 @@
+export const colors = {
+    white: "#FFFFFF",
+    black: "#151313",
+    darkBlack: "#1D1A1A",
+    darkGray: "#726B6C",
+    softGray: "#D3D3D3",
+    gray: "#726B6C",
+    graytext: "#706566",
+    lightwhite: "#EBEBEB",
+    wineRed: "#722F37",
+    blushPink: "#FFD1DC",
+    mintGreen: "#B7E4C7",
+    lavender: "#D4C1EC",
+    peach: "#FFCBA4",
+    skyBlue: "#A2D2FF",
+    lightPurple: "#D4C1EC",
+    babyPink: "#FFD1DC",
+    purple: "#3C235D",
+    lightBrown: "#C17981",
+    inputBackground: "#D4F5E0",
+    buttonBackground: "#7C9D87",
+    placeholder: "#4C5D52",
+    hotPink: '#FF69B4',
+    blue:"#7CB9E8"
+  };
+  
