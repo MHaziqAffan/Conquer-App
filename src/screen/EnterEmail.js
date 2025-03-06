@@ -48,8 +48,9 @@ const styles = StyleSheet.create({
   },
   backButton: {
     alignSelf: "flex-start",
-    marginHorizontal: 25,
-    marginTop: 60,
+    //marginHorizontal: 25,
+    marginLeft: 5,
+    marginTop: 40,
     marginBottom: 30,
   },
   welcomeText: {
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   inputContainer: {
-    width: 350,
+    width: '90%',
     borderRadius: 10,
     paddingHorizontal: 10,
     padding: 7,

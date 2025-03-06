@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 60,
-    position: 'relative', 
+    marginVertical: 40,
+  //  position: 'relative', 
   },
   backButton: {
     position: 'absolute', 

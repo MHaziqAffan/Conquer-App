@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View,TouchableOpacity,ScrollView } from "react-native";
 import React, { useState } from "react";
 import { colors } from "../utils/colors";
 import { useNavigation } from "@react-navigation/native";
@@ -9,6 +9,7 @@ const SelectGender = () => {
   const [selectedGender, setSelectedGender] = useState(null);
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.backButton}>
         <Ionicons
@@ -57,6 +58,7 @@ const SelectGender = () => {
         <Text style={{ color: colors.white, fontSize: 18 }}>Continue</Text>
       </TouchableOpacity>
     </View>
+    
   );
 };
 
@@ -67,11 +69,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     alignItems: "center",
+    overflow: "hidden",
   },
+  // scrollContainer: {
+  //   paddingVertical: 50,
+  //   paddingHorizontal: 10,
+  //   backgroundColor: colors.white,
+  // //  flexGrow: 1,
+  // },
   backButton: {
     alignSelf: "flex-start",
-    marginHorizontal: 25,
-    marginTop: 60,
+   // marginHorizontal: 25,
+   marginLeft: 5,
+   marginTop: 40,
     marginBottom: 30,
   },
   welcomeText: {
@@ -86,7 +96,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 25,
     color: colors.gray,
     marginBottom: 40,
-    marginTop: 10,
+    //marginTop: 10,
   },
   genderContainer: {
     flexDirection: "column",
@@ -98,7 +108,8 @@ const styles = StyleSheet.create({
     borderColor: colors.gray,
     padding: 30,
     alignItems: "center",
-    marginVertical: 30,
+  //  marginVertical: 30,
+    marginBottom: 30,
     borderRadius: 10,
   },
   selectedMale: {
@@ -114,7 +125,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-   
-    marginVertical: 20,
+   // marginVertical: 20,
   },
 });

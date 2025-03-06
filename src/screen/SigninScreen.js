@@ -5,11 +5,12 @@ import {
   TouchableOpacity,
   TextInput,
   Image,
+  ScrollView
 } from "react-native";
 import React, { useState } from "react";
 import { colors } from "../utils/colors";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons, SimpleLineIcons, FontAwesome } from "@expo/vector-icons";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 const SigninScreen = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +19,7 @@ const SigninScreen = () => {
   const navigation = useNavigation();
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.backButton}>
         <Ionicons
@@ -27,6 +29,10 @@ const SigninScreen = () => {
           onPress={() => navigation.goBack()}
         />
       </View>
+      {/* <ScrollView */}
+              {/* contentContainerStyle={styles.scrollContainer}
+              keyboardShouldPersistTaps="handled"
+            > */}
       <Image source={require("../assets/logo.png")} style={styles.logo} />
       <Text style={styles.welcomeText}>LOGIN</Text>
       <Text style={styles.welcomeText2}>Enter your login details</Text>
@@ -85,6 +91,7 @@ const SigninScreen = () => {
           <Text style={styles.googleText}>Apple</Text>
         </TouchableOpacity>
       </View>
+    {/* </ScrollView> */}
     </View>
   );
 };
@@ -97,13 +104,23 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     alignItems: "center",
   },
+  scrollContainer: {
+    // paddingVertical: 50,
+    // paddingHorizontal: 10,
+    backgroundColor: colors.white,
+  //  flexGrow: 1,
+  },
   backButton: {
     alignSelf: "flex-start",
-    marginHorizontal: 25,
-    marginTop: 60,
-    marginBottom: 30,
+    justifyContent: "center",
+   // marginHorizontal: 25,
+    marginTop: 40,
+    //marginBottom: 30,
   },
   logo: {
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
     width: 150,
     height: 150,
   },

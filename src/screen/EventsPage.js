@@ -28,8 +28,6 @@ const EventsPage = () => {
         </TouchableOpacity>
       </View>
 
-
-
       <View style={styles.separator} />
       <FlatList
         data={events}

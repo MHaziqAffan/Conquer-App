@@ -182,14 +182,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   descriptionInput: {
-    height: 100,
+    height: 60,
     textAlignVertical: "top",
   },
   dateTimeButton: {
     backgroundColor: colors.inputBackground,
     borderRadius: 8,
     padding: 12,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   dateTimeText: {
     fontSize: 16,
@@ -201,6 +201,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 16,
     alignItems: "center",
+    
   },
   submitButtonText: {
     fontSize: 18,

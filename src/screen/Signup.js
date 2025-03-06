@@ -54,10 +54,10 @@ const SignupScreen = () => {
         style={{ flex: 1 }}
         enabled
       >
-        <ScrollView
+        {/* <ScrollView
           contentContainerStyle={styles.scrollContainer}
           keyboardShouldPersistTaps="handled"
-        >
+        > */}
           <View style={styles.container}>
             <View style={styles.backButton}>
               <Ionicons
@@ -172,7 +172,7 @@ const SignupScreen = () => {
               </Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
+        {/* </ScrollView> */}
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -185,24 +185,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     alignItems: "center",
-    justifyContent: "center",
   },
-  scrollContainer: {
-     paddingVertical: 50,
-     paddingHorizontal: 10,
-   //  flexGrow: 1,
-   },
+  // scrollContainer: {
+  //    paddingVertical: 50,
+  //    paddingHorizontal: 10,
+  //  //  flexGrow: 1,
+  //  },
   backButton: {
     alignSelf: "flex-start",
-    marginLeft: 15,
-    marginTop: 10,
+    marginLeft: 5,
+    marginTop: 40,
+    marginBottom: 30,
   },
   welcomeText: {
     fontSize: 24,
     alignSelf: "flex-start",
     marginLeft: 15,
     fontWeight: "bold",
-    marginTop: 20,
+   // marginTop: 20,
   },
   welcomeText2: {
     fontSize: 16,

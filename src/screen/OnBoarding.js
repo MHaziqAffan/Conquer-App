@@ -23,18 +23,11 @@ const OnBoarding = () => {
         style={{ flex: 1 }}
         enabled
       >
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          keyboardShouldPersistTaps={"handled"}
-          contentContainerStyle={styles.scrollContainer}
-          bounces={false}
-        >
+       
           <View style={styles.container}>
           
             <Image source={require("../assets/logo.png")} style={styles.logo} />
           </View>
-        </ScrollView>
-
        
         <View style={styles.partnerContainer}>
           <Text style={styles.title}>Conquer: Where Reflection Meets Connection</Text>
@@ -59,21 +52,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFF5F7", 
   },
-  scrollContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexGrow: 1,
-    paddingVertical: 50,
-    paddingHorizontal: 20,
-  },
+ 
   container: {
     alignItems: "center",
   },
   logo: {
-    width: 550, 
+    width: 450, 
     height: 450,
     resizeMode: 'contain',
-    marginBottom: 100
+   // marginBottom: 100
   },
   partnerContainer: {
     backgroundColor: colors.white,
@@ -85,7 +72,7 @@ const styles = StyleSheet.create({
     left: 20,   
     right: 20,  
     width: "90%", 
-    height: 300,
+    height: 250,
     alignItems: "center",
   },
   title: {
