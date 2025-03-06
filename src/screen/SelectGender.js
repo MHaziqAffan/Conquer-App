@@ -24,7 +24,7 @@ const SelectGender = () => {
         <View
           style={[
             styles.iconContainer,
-            selectedGender === "male" && styles.selected,
+            selectedGender === "male" && styles.selectedMale,
           ]}
           onTouchEnd={() => setSelectedGender("male")}
         >
@@ -38,7 +38,7 @@ const SelectGender = () => {
         <View
           style={[
             styles.iconContainer,
-            selectedGender === "female" && styles.selected,
+            selectedGender === "female" && styles.selectedFemale,
           ]}
           onTouchEnd={() => setSelectedGender("female")}
         >
@@ -101,7 +101,10 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     borderRadius: 10,
   },
-  selected: {
+  selectedMale: {
+    borderColor: colors.blue,
+  },
+  selectedFemale:{
     borderColor: colors.hotPink,
   },
   signupButtonWrapper: {

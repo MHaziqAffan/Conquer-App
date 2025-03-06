@@ -19,7 +19,6 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 
 const SignupScreen = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [secureEntry, setSecureEntry] = useState(true);
   const [dateOfBirth, setDateOfBirth] = useState(new Date());
@@ -124,8 +123,8 @@ const SignupScreen = () => {
                   onChangeText={setPassword}
                 />
                 <TouchableOpacity onPress={() => setSecureEntry(!secureEntry)}>
-                  <SimpleLineIcons
-                    name="eye"
+                  <Ionicons
+                    name={secureEntry ? "eye" : "eye-off"}
                     size={20}
                     color={colors.hotPink}
                   />
@@ -189,10 +188,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   scrollContainer: {
-    paddingVertical: 50,
-    paddingHorizontal: 10,
-    flexGrow: 1,
-  },
+     paddingVertical: 50,
+     paddingHorizontal: 10,
+   //  flexGrow: 1,
+   },
   backButton: {
     alignSelf: "flex-start",
     marginLeft: 15,

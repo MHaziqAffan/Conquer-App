@@ -16,6 +16,7 @@ const SigninScreen = () => {
   const [password, setPassword] = useState("");
   const [secureEntry, setSecureEntry] = useState(true);
   const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.backButton}>
@@ -54,7 +55,11 @@ const SigninScreen = () => {
             onChangeText={setPassword}
           />
           <TouchableOpacity onPress={() => setSecureEntry(!secureEntry)}>
-            <SimpleLineIcons name="eye" size={20} color={colors.hotPink} />
+            <Ionicons
+              name={secureEntry ? "eye" : "eye-off"}
+              size={20}
+              color={colors.hotPink}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -85,6 +90,7 @@ const SigninScreen = () => {
 };
 
 export default SigninScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -183,11 +189,16 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 1,
     backgroundColor: colors.softGray,
-    marginHorizontal: 10, 
+    marginHorizontal: 10,
   },
   orText: {
     color: colors.black,
     fontSize: 14,
     textAlign: "center",
+  },
+  forgetPassword: {
+    color: colors.gray,
+    fontSize: 16,
+   alignSelf: "flex-end",
   },
 });

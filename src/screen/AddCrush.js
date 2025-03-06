@@ -43,7 +43,7 @@ const AddCrush = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.backgroundColor }}>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={{ flex: 1 }}
@@ -65,7 +65,7 @@ const AddCrush = () => {
                 { backgroundColor: theme.backgroundColor },
               ]}
             >
-              <TouchableOpacity onPress={() => navigation.goBack()}>
+              <TouchableOpacity onPress={() => navigation.navigate('RelationshipScreen')}>
                 <Ionicons
                   name="arrow-back"
                   style={styles.backButton}
@@ -74,8 +74,8 @@ const AddCrush = () => {
                 />
               </TouchableOpacity>
               <Text style={[styles.headerText, { color: theme.textColor }]}>
-                {" "}
-                Add Crush{" "}
+               
+                Add Crush
               </Text>
             </View>
             <View>

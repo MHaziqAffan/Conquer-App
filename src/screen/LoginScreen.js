@@ -12,7 +12,7 @@ import {
   Platform,
 } from "react-native";
 import { colors } from "../utils/colors";
-import { Ionicons, FontAwesome, SimpleLineIcons } from "@expo/vector-icons";
+import {  FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {

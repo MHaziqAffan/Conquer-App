@@ -20,6 +20,7 @@ import VerificationCode from './src/screen/VerificationCode';
 import SigninScreen from './src/screen/SigninScreen';
 import AddBestFriend from './src/screen/AddBestFriend';
 import AddCrush from './src/screen/AddCrush';
+import Relationship from './src/screen/Realationship';
 const Stack = createNativeStackNavigator();
 
 export default function App() {

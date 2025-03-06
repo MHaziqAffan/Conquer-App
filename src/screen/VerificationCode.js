@@ -26,13 +26,19 @@ const VerificationCode = () => {
 
   const handleOtpChange = (index, value) => {
     if (value.length > 1) return;
+  
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
-
-   
+  
     if (value && index < 3) {
       inputRefs.current[index + 1]?.focus();
+    }
+  };
+  
+  const handleKeyPress = (index, event) => {
+    if (event.nativeEvent.key === "Backspace" && !otp[index] && index > 0) {
+      inputRefs.current[index - 1]?.focus();
     }
   };
 
@@ -63,6 +69,7 @@ const VerificationCode = () => {
             maxLength={1}
             value={digit}
             onChangeText={(value) => handleOtpChange(index, value)}
+            onKeyPress={(event) => handleKeyPress(index, event)}
           />
         ))}
       </View>

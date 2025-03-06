@@ -67,7 +67,7 @@ const DiaryPage = () => {
 
         <Text style={[styles.heading,{color:theme.textColor}]}>Own Diaries Videos</Text>
 
-        <View style={styles.videoNotescontainer}>
+        <View style={styles.videoContainer}>
           <ImageBackground
             source={require("../assets/date.jpg")}
             style={styles.videos}
@@ -222,20 +222,25 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     fontFamily: "American Typewriter",
   },
+  videoContainer:{
+    flexDirection: "column",
+    padding: 16,
+
+  },
   videos: {
     height: 116,
-    width: 370,
+    width: "100%",
     borderRadius: 12,
-    marginVertical: 10,
     alignSelf: "center",
     overflow: "hidden",
     justifyContent: "center",
-    backgroundColor: colors.skyBlue,
+    marginBottom: 16,
+    //backgroundColor: colors.skyBlue,
   },
   videoContent: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "start",
+    alignItems: "flex-start",
     padding: 10,
   },
   videoTitle: {

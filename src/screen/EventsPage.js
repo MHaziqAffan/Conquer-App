@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     justifyContent: 'center',
     padding: 10,
+    marginBottom: 10,
   },
   eventContent: {
     padding: 10,
