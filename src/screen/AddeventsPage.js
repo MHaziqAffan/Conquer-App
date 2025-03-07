@@ -12,6 +12,8 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { colors } from "../utils/colors";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
+import Header from "./Header";
+
 
 const AddEvent = () => {
   const navigation = useNavigation();
@@ -64,22 +66,10 @@ const AddEvent = () => {
         { backgroundColor: theme.backgroundColor },
       ]}
     >
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => navigation.goBack()}
-          style={styles.backButton}
-        >
-          <Ionicons name="arrow-back" size={24} color={theme.textColor} />
-        </TouchableOpacity>
-        <View style={styles.eventTextContainer}>
-          <Text style={[styles.eventText, { color: theme.textColor }]}>
-            Add Event
-          </Text>
-        </View>
-      </View>
+      <Header title="Add Event" />
       <View style={styles.formContainer}>
         <Text style={[styles.label, { color: theme.textColor }]}>Title</Text>
-        <TextInput
+        <TextInput  
           style={styles.input}
           placeholder="Enter Title Here..."
           value={title}
@@ -138,7 +128,7 @@ const AddEvent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    flex: 1,
     padding: 20,
   },
   header: {

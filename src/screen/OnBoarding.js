@@ -17,13 +17,8 @@ const OnBoarding = () => {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
-        style={{ flex: 1 }}
-        enabled
-      >
-       
+   
+       <>
           <View style={styles.container}>
           
             <Image source={require("../assets/logo.png")} style={styles.logo} />
@@ -40,8 +35,7 @@ const OnBoarding = () => {
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+   </>
   );
 };
 
@@ -50,11 +44,13 @@ export default OnBoarding;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#FFF5F7", 
+   
   },
  
   container: {
+    flex: 1,
     alignItems: "center",
+     backgroundColor: "#FFF5F7", 
   },
   logo: {
     width: 450, 

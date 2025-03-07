@@ -1,39 +1,38 @@
-import { StyleSheet, Text, View, TouchableOpacity,TextInput } from "react-native";
 import React, { useState } from "react";
+import { StyleSheet, View, TouchableOpacity, TextInput, Text, useWindowDimensions } from "react-native";
 import { colors } from "../utils/colors";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
+import SecondHeader from "./SecondHeader";
+
 const EnterEmail = () => {
   const [email, setEmail] = useState("");
-
   const navigation = useNavigation();
+  const { width, height } = useWindowDimensions();  
+
   return (
     <View style={styles.container}>
-      <View style={styles.backButton}>
-        <Ionicons
-          name="chevron-back-outline"
-          size={30}
-          color={colors.gray}
-          onPress={() => navigation.goBack()}
-        />
+      
+      <SecondHeader title="Enter Email" subtitle="Enter your email to continue." />
+
+      <View style={styles.contentContainer}>
+        <View style={styles.inputContainer(width)}>
+          <TextInput
+            style={styles.textInput}
+            placeholder="Enter your email"
+            placeholderTextColor="gray"
+            keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
+          />
+        </View>
+
+        <TouchableOpacity
+          style={styles.signupButtonWrapper}
+          onPress={() => navigation.navigate("VerificationCode")}
+        >
+          <Text style={{ color: colors.white, fontSize: 18 }}>Continue</Text>
+        </TouchableOpacity>
       </View>
-      <Text style={styles.welcomeText}>Enter Email</Text>
-      <Text style={styles.welcomeText2}>
-        Enter your email to continue
-      </Text>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter your email"
-          placeholderTextColor="gray"
-          keyboardType="email-address"
-          value={email}
-          onChangeText={setEmail}
-        />
-      </View>
-      <TouchableOpacity style={styles.signupButtonWrapper} onPress={()=>navigation.navigate("VerificationCode")}>
-        <Text style={{ color: colors.white, fontSize: 18 }}>Continue</Text>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -44,45 +43,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    alignItems: "center",
+    alignItems: "flex-start",
   },
-  backButton: {
-    alignSelf: "flex-start",
-    //marginHorizontal: 25,
-    marginLeft: 5,
-    marginTop: 40,
-    marginBottom: 30,
+  contentContainer: {
+    width: "90%",
+    marginHorizontal: 20,
   },
-  welcomeText: {
-    fontSize: 24,
-    marginHorizontal: 25,
-    alignSelf: "flex-start",
-    fontWeight: "bold",
-  },
-  welcomeText2: {
+  inputContainer: (screenWidth) => ({
+    width: "100%",
+    borderRadius: 10,
+    paddingHorizontal: screenWidth * 0.05,
+    padding: screenWidth * 0.01,  
+    marginVertical: 10,
+    borderWidth: 1,
+    borderColor: colors.hotPink,
+  }),
+  textInput: {
+    width: "100%",
+    paddingHorizontal: 10,
     fontSize: 16,
-    alignSelf: "flex-start",
-    marginHorizontal: 25,
-    color: colors.gray,
-    marginBottom: 10,
-    marginTop: 10,
   },
   signupButtonWrapper: {
-    width: 350,
+    width: "100%",
     height: 60,
     backgroundColor: colors.hotPink,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     marginVertical: 20,
-  },
-  inputContainer: {
-    width: '90%',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    padding: 7,
-    marginVertical: 10,
-    borderWidth: 1,
-    borderColor: colors.hotPink,
   },
 });

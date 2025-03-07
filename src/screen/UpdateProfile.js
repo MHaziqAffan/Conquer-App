@@ -15,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import { colors } from "../utils/colors";
+import Headers from "./Header";
 
 const UpdateProfile = () => {
   const navigation = useNavigation();
@@ -43,18 +44,7 @@ const UpdateProfile = () => {
             ]}
           >
             {/* Header */}
-            <View style={styles.header}>
-              <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Ionicons
-                  name="arrow-back"
-                  size={24}
-                  color={theme.textColor}
-                />
-              </TouchableOpacity>
-              <Text style={[styles.headerText, { color: theme.textColor }]}>
-                Edit Profile
-              </Text>
-            </View>
+            <Headers title="Update Profile" />
 
             {/* Profile Picture Section */}
             <View style={styles.profileSection}>

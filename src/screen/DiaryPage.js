@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import React from "react";
 import { colors } from "../utils/colors";
 import { Ionicons } from "@expo/vector-icons";
+import Header from "./Header";
 
 const DiaryPage = () => {
   const navigation = useNavigation();
@@ -19,21 +20,8 @@ const DiaryPage = () => {
   return (
     <ScrollView>
       <View style={[styles.container,{backgroundColor: theme.backgroundColor}]}>
-        <View
-          style={[styles.header, { backgroundColor: theme.backgroundColor }]}
-        >
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Ionicons
-              name="arrow-back"
-              style={styles.backButton}
-              color={theme.textColor}
-              size={24}
-            />
-          </TouchableOpacity>
-          <Text style={[styles.headerText, { color: theme.textColor }]}>
-            Diary
-          </Text>
-        </View>
+        
+        <Header title="Diary" />
 
         <View style={styles.addbox}>
           <Text style={[styles.innertext,{color:theme.textColor}]}>Add Your Thoughts</Text>
@@ -121,6 +109,7 @@ export default DiaryPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
   },
   addbox: {
     backgroundColor: colors.mintGreen,

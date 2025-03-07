@@ -1,12 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
+import Header from "./Header";
 
 const SettingsPage = () => {
   const navigation = useNavigation();
-  const theme = useSelector((state) => state.theme); 
+  const theme = useSelector((state) => state.theme);
 
   const settingsOptions = [
     { name: "Account", icon: "person-outline", screen: "UpdateProfile" },
@@ -17,14 +18,9 @@ const SettingsPage = () => {
   ];
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}> 
-      <View style={[styles.header, { backgroundColor: theme.backgroundColor }]}> 
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" style={styles.backButton} color={theme.textColor} size={24} />
-        </TouchableOpacity>
-        <Text style={[styles.headerText, { color: theme.textColor }]}>Settings</Text>
-      </View>
-      
+    <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
+      <Header title="Settings" />
+
       {settingsOptions.map((option, index) => (
         <TouchableOpacity
           key={index}
@@ -33,9 +29,7 @@ const SettingsPage = () => {
         >
           <Ionicons name={option.icon} size={24} color={theme.textColor} style={styles.icon} />
           <Text style={[styles.optionText, { color: theme.textColor }]}>{option.name}</Text>
-          <TouchableOpacity onPress={() => navigation.navigate(option.screen)}>
-            <Ionicons name="chevron-forward" size={20} color={theme.textColor} />
-          </TouchableOpacity>
+          <Ionicons name="chevron-forward" size={20} color={theme.textColor} />
         </TouchableOpacity>
       ))}
     </View>
@@ -48,24 +42,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignContent: "center",
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 40,
-  //  position: 'relative', 
-  },
-  backButton: {
-    position: 'absolute', 
-    left: 0, 
-    zIndex: 1, 
-  },
-  headerText: {
-    fontSize: 27,
-    fontWeight: "bold",
-    textAlign: "center",
-    flex: 1,
   },
   option: {
     flexDirection: "row",

@@ -6,6 +6,7 @@ import { colors } from '../utils/colors';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme } from '../redux/themeSlice';
+import Header from './Header';
 
 const Theme = () => {
   const navigation = useNavigation();
@@ -27,18 +28,7 @@ const Theme = () => {
 
   return (
     <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons
-            name="arrow-back"
-            size={24}
-            color={theme.textColor} // Use theme text color
-            style={styles.backButton}
-          />
-        </TouchableOpacity>
-        <Text style={[styles.headerText, { color: theme.textColor }]}>Select Theme</Text>
-      </View>
+     <Header title="Theme" />
 
       {/* Theme Options */}
       {themes.map((themeOption, index) => (
@@ -68,23 +58,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 60,
-    position: 'relative',
-  },
-  backButton: {
-    position: 'absolute',
-    left: 0,
-    zIndex: 1,
-  },
-  headerText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    flex: 1,
   },
   optionContainer: {
     flexDirection: 'row',

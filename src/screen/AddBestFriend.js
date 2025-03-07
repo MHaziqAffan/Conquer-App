@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { Image } from "react-native";
 import { useSelector } from "react-redux";
+import Header from "./Header";
 
 const AddBestFriend = () => {
   const navigation = useNavigation();
@@ -58,24 +59,7 @@ const AddBestFriend = () => {
               { backgroundColor: theme.backgroundColor },
             ]}
           >
-            <View
-              style={[
-                styles.header,
-                { backgroundColor: theme.backgroundColor },
-              ]}
-            >
-              <TouchableOpacity
-                onPress={() => navigation.goBack()}
-                style={styles.backButton}
-              >
-                <Ionicons name="arrow-back" color={theme.textColor} size={24} />
-              </TouchableOpacity>
-              <View style={{ flex: 1, alignItems: "center" }}>
-                <Text style={[styles.headerText, { color: theme.textColor }]}>
-                  Add Best Friend
-                </Text>
-              </View>
-            </View>
+            <Header title="Add Best Friend" />
 
             {/* Profile Picture Section */}
             <View style={styles.profilePicContainer}>
@@ -184,7 +168,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignContent: "center",
   },
   header: {
     flexDirection: "row",

@@ -9,67 +9,41 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
-
+import Header from "./Header";
 const Relationship = () => {
   const navigation = useNavigation();
   const theme = useSelector((state) => state.theme);
-  return (
-    <View
-      style={[styles.container, { backgroundColor: theme.backgroundColor }]}
-    >
-      <View style={[styles.header, { backgroundColor: theme.backgroundColor }]}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons
-            name="arrow-back"
-            style={styles.backButton}
-            color={theme.textColor}
-            size={24}
-          />
-        </TouchableOpacity>
-        <Text style={[styles.headerText, { color: theme.textColor }]}>
-          Relationships
-        </Text>
-      </View>
 
+  return (
+    <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
+      <Header title="Reationships" />
+      {/* Search Input */}
       <View style={[styles.searchContainer, { borderColor: theme.textColor }]}>
-        <Ionicons
-          name="search"
-          size={20}
-          color={theme.textColor}
-          style={styles.searchIcon}
-        />
+        <Ionicons name="search" size={20} color={theme.textColor} style={styles.searchIcon} />
         <TextInput
-          style={[
-            styles.searchInput,
-            { color: theme.textColor, borderColor: theme.textColor },
-          ]}
+          style={[styles.searchInput, { color: theme.textColor, borderColor: theme.textColor }]}
           placeholder="Search users..."
           placeholderTextColor={theme.textColor}
         />
       </View>
 
+      {/* Add Crush and Add Best Friend */}
       <View style={styles.iconContainer}>
         <TouchableOpacity onPress={() => navigation.navigate("AddCrush")}>
           <View style={styles.iconWrapper}>
             <View style={styles.iconCircle}>
               <Ionicons name="heart" size={30} color="white" />
             </View>
-            <Text style={[styles.addText, { color: theme.textColor }]}>
-              Add Crush
-            </Text>
+            <Text style={[styles.addText, { color: theme.textColor }]}>Add Crush</Text>
           </View>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate("AddBestFriend")}>
           <View style={styles.iconWrapper}>
-            <View
-              style={styles.iconCircle}
-              onPress={() => navigation.navigate("AddBestFriend")}
-            >
+            <View style={styles.iconCircle}>
               <Ionicons name="person-add" size={30} color="white" />
             </View>
-            <Text style={[styles.addText, { color: theme.textColor }]}>
-              Add Best Friend
-            </Text>
+            <Text style={[styles.addText, { color: theme.textColor }]}>Add Best Friend</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -83,24 +57,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignContent: "center",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginVertical: 60,
-    position: "relative",
+    marginVertical: 40, // Adjusted margin to align properly
+    position: "relative", // Allow absolute positioning of the back button
   },
   backButton: {
-    position: "absolute",
+    position: "absolute", 
     left: 0,
-    zIndex: 1,
+    zIndex: 1, // Ensure the back button is on top
   },
   headerText: {
     fontSize: 27,
     fontWeight: "bold",
     textAlign: "center",
-    flex: 1,
+    flex: 1, // Ensures text is centered
   },
   searchContainer: {
     flexDirection: "row",
@@ -122,15 +95,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
-    paddingTop: 50,
+    paddingTop: 30, // Adjusted to properly space out icons from search bar
+    paddingBottom: 50, // Space the icons well from the bottom
   },
   iconWrapper: {
     alignItems: "center",
   },
   iconCircle: {
     width: 60,
-    borderRadius: 30,
     height: 60,
+    borderRadius: 30,
     backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",

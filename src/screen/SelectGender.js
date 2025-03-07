@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { colors } from "../utils/colors";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
+import SecondHeader from "./SecondHeader";
 
 const SelectGender = () => {
   const navigation = useNavigation();
@@ -11,16 +12,7 @@ const SelectGender = () => {
   return (
     
     <View style={styles.container}>
-      <View style={styles.backButton}>
-        <Ionicons
-          name="chevron-back-outline"
-          size={30}
-          color={colors.gray}
-          onPress={() => navigation.goBack()}
-        />
-      </View>
-      <Text style={styles.welcomeText}>Select Gender</Text>
-      <Text style={styles.welcomeText2}>Select your gender</Text>
+     <SecondHeader title="Select Gender" subtitle="Select your Gender" />
       <View style={styles.genderContainer}>
         <View
           style={[
@@ -69,7 +61,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     alignItems: "center",
-    overflow: "hidden",
   },
   // scrollContainer: {
   //   paddingVertical: 50,

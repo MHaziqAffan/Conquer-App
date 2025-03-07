@@ -16,6 +16,8 @@ import { colors } from "../utils/colors";
 import { Ionicons, SimpleLineIcons,MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import SecondHeader from "./SecondHeader";
+
 
 const SignupScreen = () => {
   const [name, setName] = useState("");
@@ -59,18 +61,8 @@ const SignupScreen = () => {
           keyboardShouldPersistTaps="handled"
         > */}
           <View style={styles.container}>
-            <View style={styles.backButton}>
-              <Ionicons
-                name="chevron-back-outline"
-                size={30}
-                color={colors.gray}
-                onPress={() => navigation.goBack()}
-              />
-            </View>
-            <Text style={styles.welcomeText}>Add Profile Details</Text>
-            <Text style={styles.welcomeText2}>
-            Show up, stand out! Add your info & picture.
-            </Text>
+            <SecondHeader title="Add Profile Details" subtitle=" Show up, stand out! Add your info & picture." />
+           
 
             {/* Profile Picture Section */}
             <View style={styles.profilePicContainer}>

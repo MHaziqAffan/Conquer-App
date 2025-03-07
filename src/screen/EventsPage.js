@@ -5,12 +5,14 @@ import { events } from '../constants';
 import { colors } from '../utils/colors';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from "react-redux";
+import Header from './Header';
 const EventsPage = () => {
   const navigation = useNavigation();
   const theme = useSelector((state) => state.theme);
 
   return (
     <View style={[styles.container,{backgroundColor:theme.backgroundColor}]}>
+      
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.backButton,{color:theme.textColor}]}>
           <Ionicons name="arrow-back" size={24} color={theme.textColor} />

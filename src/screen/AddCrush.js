@@ -17,6 +17,7 @@ import { useNavigation } from "@react-navigation/native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { Image } from "react-native";
 import { useSelector } from "react-redux";
+import Header from "./Header";
 
 const AddCrush = () => {
   const navigation = useNavigation();
@@ -59,25 +60,7 @@ const AddCrush = () => {
               { backgroundColor: theme.backgroundColor },
             ]}
           >
-            <View
-              style={[
-                styles.header,
-                { backgroundColor: theme.backgroundColor },
-              ]}
-            >
-              <TouchableOpacity onPress={() => navigation.navigate('RelationshipScreen')}>
-                <Ionicons
-                  name="arrow-back"
-                  style={styles.backButton}
-                  color={theme.textColor}
-                  size={24}
-                />
-              </TouchableOpacity>
-              <Text style={[styles.headerText, { color: theme.textColor }]}>
-               
-                Add Crush
-              </Text>
-            </View>
+            <Header title="Add Crush" />
             <View>
               {/* Profile Picture Section */}
               <View style={styles.profilePicContainer}>
@@ -211,18 +194,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    alignContent: "center",
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
     marginVertical: 60,
     position: "relative",
+    width: "100%",
+  },
+  backButtonContainer: {
+    position: "absolute",
+    left: 0, 
+    zIndex: 1,
   },
   backButton: {
-    position: "absolute",
-    left: 0,
-    zIndex: 1,
+    padding: 10, 
   },
   headerText: {
     fontSize: 27,

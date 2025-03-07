@@ -11,6 +11,8 @@ import React, { useState } from "react";
 import { colors } from "../utils/colors";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import SecondHeader from "./SecondHeader";
+
 
 const SigninScreen = () => {
   const [email, setEmail] = useState("");
@@ -21,21 +23,13 @@ const SigninScreen = () => {
   return (
     
     <View style={styles.container}>
-      <View style={styles.backButton}>
-        <Ionicons
-          name="chevron-back-outline"
-          size={30}
-          color={colors.gray}
-          onPress={() => navigation.goBack()}
-        />
-      </View>
+      <SecondHeader title="Login" subtitle="Enter your login details" />
       {/* <ScrollView */}
               {/* contentContainerStyle={styles.scrollContainer}
               keyboardShouldPersistTaps="handled"
             > */}
       <Image source={require("../assets/logo.png")} style={styles.logo} />
-      <Text style={styles.welcomeText}>LOGIN</Text>
-      <Text style={styles.welcomeText2}>Enter your login details</Text>
+     
       <View style={styles.inputContainer}>
         <Text style={styles.inputLabel}>Email Address</Text>
         <TextInput
@@ -110,13 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   //  flexGrow: 1,
   },
-  backButton: {
-    alignSelf: "flex-start",
-    justifyContent: "center",
-   // marginHorizontal: 25,
-    marginTop: 40,
-    //marginBottom: 30,
-  },
+ 
   logo: {
     alignItems: "center",
     justifyContent: "center",
@@ -124,20 +112,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
   },
-  welcomeText: {
-    fontSize: 24,
-    marginHorizontal: 25,
-    alignSelf: "flex-start",
-    fontWeight: "bold",
-  },
-  welcomeText2: {
-    fontSize: 16,
-    alignSelf: "flex-start",
-    marginHorizontal: 25,
-    color: colors.gray,
-    marginBottom: 10,
-    marginTop: 10,
-  },
+
   signupButtonWrapper: {
     width: 350,
     height: 60,
