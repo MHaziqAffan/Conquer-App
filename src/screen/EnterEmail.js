@@ -7,7 +7,6 @@ import SecondHeader from "./SecondHeader";
 const EnterEmail = () => {
   const [email, setEmail] = useState("");
   const navigation = useNavigation();
-  const { width, height } = useWindowDimensions();  
 
   return (
     <View style={styles.container}>
@@ -15,7 +14,8 @@ const EnterEmail = () => {
       <SecondHeader title="Enter Email" subtitle="Enter your email to continue." />
 
       <View style={styles.contentContainer}>
-        <View style={styles.inputContainer(width)}>
+        <View style={styles.inputWrapper}>
+        <View style={styles.emailText}>
           <TextInput
             style={styles.textInput}
             placeholder="Enter your email"
@@ -24,6 +24,7 @@ const EnterEmail = () => {
             value={email}
             onChangeText={setEmail}
           />
+        </View>
         </View>
 
         <TouchableOpacity
@@ -49,15 +50,7 @@ const styles = StyleSheet.create({
     width: "90%",
     marginHorizontal: 20,
   },
-  inputContainer: (screenWidth) => ({
-    width: "100%",
-    borderRadius: 10,
-    paddingHorizontal: screenWidth * 0.05,
-    padding: screenWidth * 0.01,  
-    marginVertical: 10,
-    borderWidth: 1,
-    borderColor: colors.hotPink,
-  }),
+ 
   textInput: {
     width: "100%",
     paddingHorizontal: 10,
@@ -72,4 +65,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 20,
   },
+  inputWrapper:{
+    padding:2,
+  },
+  emailText:{
+    width:'100%',
+    padding:12,
+    borderColor:colors.hotPink,
+    borderWidth:1,
+    borderRadius:5,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+
 });
